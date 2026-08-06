@@ -22,7 +22,7 @@ export default function Notes() {
 
   const handlDelete = async (id: string) => {
     const token = localStorage.getItem(`token`);
-    const res = await fetch(`http://localhost:3000/api/note/${id}`, {
+    const res = await fetch(`/api/note/${id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

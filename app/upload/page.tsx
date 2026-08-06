@@ -17,7 +17,7 @@ export default function Upload() {
 
     const token = localStorage.getItem(`token`);
 
-    const res = await fetch(`http://localhost:3000/api/note`, {
+    const res = await fetch(`/api/note`, {
       method: "Post",
       headers: {
         "Content-Type": "application/json",
