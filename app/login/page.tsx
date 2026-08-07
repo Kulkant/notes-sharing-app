@@ -30,8 +30,14 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm flex flex-col gap-4"
+      >
+        <h1 className="text-2xl font-semibold text-gray-800 text-center">
+          Login
+        </h1>
         <div>
           <label htmlFor="email">Email : </label>
           <input
@@ -39,6 +45,7 @@ export default function Login() {
             id="email"
             placeholder="Enter your email"
             onChange={(e) => setEmail(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -49,12 +56,22 @@ export default function Login() {
             id="password"
             placeholder="Enter your password"
             onChange={(e) => setPassword(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
-        <button>Login</button>
+        <button className="bg-blue-600 text-white rounded-md py-2 font-medium hover:bg-blue-700 transition-colors">
+          Login
+        </button>
+        <p className="text-red-500 text-sm text-center">{message}</p>
+
+        <p className="text-sm text-center text-gray-500">
+          Don't have an account?{" "}
+          <a href="/signup" className="text-blue-600 hover:underline">
+            Sign up
+          </a>
+        </p>
       </form>
-      <p>{message}</p>
     </div>
   );
 }

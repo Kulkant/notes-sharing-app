@@ -34,8 +34,15 @@ export default function Upload() {
   };
 
   return (
-    <div>
-      <form onSubmit={(e) => handleSubmit(e)}>
+    <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <form
+        onSubmit={(e) => handleSubmit(e)}
+        className="bg-white p-8 rounded-lg shadow-md w-full max-w-lg flex flex-col gap-4"
+      >
+        <h1 className="text-2xl font-semibold text-gray-800 text-center">
+          Upload a Note
+        </h1>
+
         <div>
           <label htmlFor="title">Title : </label>
           <input
@@ -43,6 +50,7 @@ export default function Upload() {
             id="title"
             placeholder="Enter your title here"
             onChange={(e) => setTitle(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -53,6 +61,7 @@ export default function Upload() {
             id="subject"
             placeholder="Enter your subject here"
             onChange={(e) => setSubject(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -63,6 +72,7 @@ export default function Upload() {
             id="semester"
             placeholder="Enter your semester here"
             onChange={(e) => setSemester(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           />
         </div>
 
@@ -72,10 +82,13 @@ export default function Upload() {
             id="content"
             placeholder="Enter your content here"
             onChange={(e) => setContent(e.target.value)}
+            className="border border-gray-300 rounded-md px-3 py-2 w-[95%] focus:outline-none focus:ring-2 focus:ring-blue-400"
           ></textarea>
         </div>
 
-        <button>Upload</button>
+        <button className="bg-blue-600 text-white rounded-md py-2 font-medium hover:bg-blue-700 transition-colors">
+          Upload
+        </button>
       </form>
 
       <p>{message}</p>
